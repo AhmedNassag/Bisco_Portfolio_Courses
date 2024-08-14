@@ -1,0 +1,15 @@
+[10-Jun-2024 09:28:30 UTC] PHP Warning:  require(/home/biohajcg/public_html/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/biohajcg/public_html/index.php on line 34
+[10-Jun-2024 09:28:30 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/biohajcg/public_html/../vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/biohajcg/public_html/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/biohajcg/public_html/index.php on line 34
+[10-Jun-2024 09:28:37 UTC] PHP Warning:  require(/home/biohajcg/public_html/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/biohajcg/public_html/index.php on line 34
+[10-Jun-2024 09:28:37 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/biohajcg/public_html/../vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/biohajcg/public_html/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/biohajcg/public_html/index.php on line 34
+[10-Jun-2024 09:30:37 UTC] PHP Warning:  require(/home/biohajcg/public_html/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/biohajcg/public_html/index.php on line 34
+[10-Jun-2024 09:30:37 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/biohajcg/public_html/../vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/biohajcg/public_html/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/biohajcg/public_html/index.php on line 34
