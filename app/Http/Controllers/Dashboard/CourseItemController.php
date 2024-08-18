@@ -57,7 +57,7 @@ class CourseItemController extends Controller
                 'author_ar'   => 'required|string',
                 'author_en'   => 'required|string',
                 'hours_count' => 'required|numeric|gte:0',
-                'rate'        => 'required|numeric|gte:0',
+                'rate'        => 'required|numeric|gte:0|lte:5',
                 'photo'       => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             ]);
             if($validator->fails())
@@ -131,12 +131,12 @@ class CourseItemController extends Controller
     {
         try {
             $validator = Validator::make($request->all(),[
-                'name_ar'     => 'required|string|max:191'/*|unique:course_items,name_ar,'.$request->id*/,
-                'name_en'     => 'required|string|max:191'/*|unique:course_items,name_en,'.$request->id*/,
+                'name_ar'     => 'required|string|max:191|unique:course_items,name_ar,'.$request->id,
+                'name_en'     => 'required|string|max:191|unique:course_items,name_en,'.$request->id,
                 'author_ar'   => 'required|string',
                 'author_en'   => 'required|string',
                 'hours_count' => 'required|numeric|gte:0',
-                'rate'        => 'required|numeric|gte:0',
+                'rate'        => 'required|numeric|gte:0|lte:5',
                 'photo'       => 'nullable',
             ]);
             if($validator->fails())

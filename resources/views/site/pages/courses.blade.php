@@ -50,13 +50,29 @@
                     <div class="padding-25px">
                         <p href="#" class="text-main-color">{{ trans('main.Course Title') }}</p>
                         <h3>
-                            <a href="#" data-toggle="modal" data-target=".bd-example-modal-lg" class="d-block text-dark text-capitalize text-medium margin-tb-15px">
+                            <a href="{{ route('site.courseItem', $courseItem->name) }}" class="d-block text-dark text-capitalize text-medium margin-tb-15px">
                                 {{ $courseItem->name }} 
                             </a>
                         </h3>
                         <span class="margin-right-20px text-extra-small">
                             <i class="fa fa-user text-grey-2"></i> 
                             {{ trans('main.By') }} : <a href="#">{{ $courseItem->author }}</a>
+                        </span>
+                        <span class="margin-right-20px text-extra-small">
+                            <i class="fa fa-clock-o text-grey-2"></i> 
+                            {{ trans('main.Hours Count') }} : <a href="#">{{ $courseItem->hours_count }}</a>
+                        </span>
+                        <br>
+                        <span class="margin-right-20px text-extra-small">
+                            <i class="fa fa-star-half-o text-grey-2"></i>
+                            {{ trans('main.Rate') }} :
+                            @for($i = 0; $i < 5; $i++)
+                                @if($i < $courseItem->rate)
+                                    <i class="fa fa-star" aria-hidden="true" style="color: gold"></i>
+                                @else
+                                    <i class="fa fa-star" aria-hidden="true" style="color: darkgray"></i>
+                                @endif
+                            @endfor
                         </span>
                     </div>
                     <div class="clearfix"></div>

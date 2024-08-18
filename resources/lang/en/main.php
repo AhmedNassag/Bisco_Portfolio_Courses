@@ -17,6 +17,7 @@ return [
     'General'         => 'General',
     'List'            => 'List',
     'General Data'    => 'General Data',
+    'View Details'    => 'View Details',
     'All'             => 'All',
 
     //Main

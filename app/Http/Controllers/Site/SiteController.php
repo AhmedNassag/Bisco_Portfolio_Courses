@@ -14,6 +14,7 @@ use App\Models\ServiceItem;
 use App\Models\ProjectDetail;
 use App\Models\ProjectItem;
 use App\Models\CourseItem;
+use App\Models\CourseItemContent;
 use App\Models\Partener;
 use App\Models\User;
 use App\Models\Message;
@@ -68,6 +69,15 @@ class SiteController extends Controller
     {
         $courseItems = CourseItem::latest()->get();
         return view('site.pages.courses', compact('courseItems'));
+    }
+
+
+
+    public function courseItem($name)
+    {
+        $courseItem = CourseItem::where('name_ar', $name)->orWhere('name_en', $name)->first();
+        $courseItems = CourseItemContent::where('course_item_id', $courseItem->id)->orderBy('sort','Asc')->get();
+        return view('site.pages.course-item', compact('courseItems'));
     }
 
 
