@@ -48,7 +48,7 @@
                         <img src="{{ asset('attachments/course-item/'.$courseItem->photo) }}" alt="" class="courseImg">
                     </div>
                     <div class="padding-25px">
-                        <p href="#" class="text-main-color">{{ trans('main.Course Title') }}</p>
+                        {{-- <p href="#" class="text-main-color">{{ trans('main.Course Title') }}</p> --}}
                         <h3>
                             <a href="{{ route('site.courseItem', $courseItem->name) }}" class="d-block text-dark text-capitalize text-medium margin-tb-15px">
                                 {{ $courseItem->name }} 

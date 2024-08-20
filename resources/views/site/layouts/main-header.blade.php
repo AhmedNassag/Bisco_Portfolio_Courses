@@ -119,7 +119,7 @@
 						<div class="col-lg-3 col-md-12">
 							<a id="logo" href="/" class="d-inline-block margin-tb-15px">
 							@if($companyInformation->photo)
-							<img src="{{ asset('attachments/company-information/'.$companyInformation->photo) }}" class="navLogo" alt="">
+							<img src="{{ asset('attachments/company-information/'.$companyInformation->photo) }}" class="navLogo my-1" alt="">
 							@else
 							<img src="{{ asset('assets_front/assets/img/logo.png') }}" class="navLogo" alt="">
 							@endif

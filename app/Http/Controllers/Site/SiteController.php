@@ -82,6 +82,14 @@ class SiteController extends Controller
 
 
 
+    public function courseItemContent($name)
+    {
+        $courseItemContent = CourseItemContent::where('name_ar', $name)->orWhere('name_en', $name)->first();
+        return view('site.pages.course-item-content', compact('courseItemContent'));
+    }
+
+
+
     public function contactUs()
     {
         return view('site.pages.contact-us');

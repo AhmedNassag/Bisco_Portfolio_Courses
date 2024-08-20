@@ -24,7 +24,7 @@
             <h1>{{ trans('main.Course Items') }}</h1>
             <ol class="breadcrumb">
                 <li><a href="#">{{ trans('main.Home') }}</a></li>
-                <li class="active">{{ trans('main.Course Items') }}</li>
+                <li class="active">{{ trans('main.Course Item Content') }}</li>
             </ol>
         </div>
     </div>
@@ -38,31 +38,27 @@
             <div class="row justify-content-center">
                 <div class="col-lg-7">
                     <div class="icon text-main-color"></div>
-                    <div class="h2">{{ trans('main.Course Items') }}</div>
+                    <div class="h2">{{ trans('main.Course Item Content') }}</div>
                 </div>
             </div>
         </div>
         <div class="row">
-            @foreach($courseItems as $courseItem)
-                <div class="col-lg-4 col-md-6 sm-mb-35px my-lg-5 my-3">
-                    <div class="blog-item">
-                        <div class="blog-item img" >
-                            <a class="blog-item img"  href="{{ route('site.courseItemContent', $courseItem->name) }}" target="_blank">
-                                <video style="height:200px; object-fit:cover" class="blog-item img">
-                                    <source class="mb-1 " src="{{ asset('attachments/course-item-content/'.$courseItem->photo) }}" alt="{{ $courseItem->photo }}">
-                                </video>
-                            </a>
-                            {{-- <a href="#" class="date">
-                                <span class="day">{{ $courseItem->created_at->format('d') }}</span>
-                                <span class="month">{{ $courseItem->created_at->format('M') }}</span>
-                            </a> --}}
-                        </div>
-                        <a href="{{ route('site.courseItem', $courseItem->name) }}" class="title">
-                            {{ $courseItem->name }}
-                        </a>
+            <div class="col-lg-12 col-md-12 sm-mb-35px my-lg-5 my-3">
+                <div class="blog-item">
+                    <div class="img">
+                        <video controls width="420" height="420">
+                            <source class="mb-1" src="{{ asset('attachments/course-item-content/'.$courseItemContent->photo) }}" alt="{{ $courseItemContent->photo }}">
+                        </video>
+                        {{-- <a href="#" class="date">
+                            <span class="day">{{ $courseItemContent->created_at->format('d') }}</span>
+                            <span class="month">{{ $courseItemContent->created_at->format('M') }}</span>
+                        </a> --}}
                     </div>
+                    {{-- <a href="#" class="title">
+                        {{ $courseItemContent->name }}
+                    </a> --}}
                 </div>
-            @endforeach
+            </div>
         </div>
     </div>
 </div>

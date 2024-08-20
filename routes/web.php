@@ -223,6 +223,7 @@ Route::Group(['middleware' => ['lang']], function () {
     Route::get('project-item/{name}', [SiteController::class,'projectItem'])->name('site.projectItem');
     Route::get('courses', [SiteController::class,'courses'])->name('site.courses');
     Route::get('course-item/{name}', [SiteController::class,'courseItem'])->name('site.courseItem');
+    Route::get('course-item-content/{name}', [SiteController::class,'courseItemContent'])->name('site.courseItemContent');
     Route::get('contact-us', [SiteController::class,'contactUs'])->name('site.contactUs');
     // Route::post('send-message', [SiteController::class, 'sendMessage'])->name('site.send-message');
     Route::post('send-message', [SiteController::class, 'sendMessage'])->name('site.send-message');

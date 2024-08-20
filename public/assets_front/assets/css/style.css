@@ -34426,7 +34426,7 @@ form.dark-form ::-ms-input-placeholder {
 
 .log-in-form .form-control {
   border-radius: 0px;
-  -webkit-box-shadow: none;
+  /* -webkit-box-shadow: none; */
   height: 50px;
 }
 
@@ -38675,6 +38675,7 @@ form.dark-form ::-ms-input-placeholder {
 /*# sourceMappingURL=style.css.map */
 .navLogo {
   width: 100px;
+  margin-top: 8px;
 }
 
 .sliderIcon {
