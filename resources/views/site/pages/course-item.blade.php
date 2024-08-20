@@ -24,7 +24,7 @@
             <h1>{{ trans('main.Course Items') }}</h1>
             <ol class="breadcrumb">
                 <li><a href="#">{{ trans('main.Home') }}</a></li>
-                <li class="active">{{ trans('main.Course Items') }}</li>
+                <li class="active">{{ trans('main.Course Item Content') }}</li>
             </ol>
         </div>
     </div>
@@ -38,7 +38,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-7">
                     <div class="icon text-main-color"></div>
-                    <div class="h2">{{ trans('main.Course Items') }}</div>
+                    <div class="h2">{{ trans('main.Course Item Content') }}</div>
                 </div>
             </div>
         </div>
@@ -57,7 +57,7 @@
                                 <span class="month">{{ $courseItem->created_at->format('M') }}</span>
                             </a> --}}
                         </div>
-                        <a href="{{ route('site.courseItem', $courseItem->name) }}" class="title">
+                        <a href="{{ route('site.courseItemContent', $courseItem->name) }}" class="title">
                             {{ $courseItem->name }}
                         </a>
                     </div>

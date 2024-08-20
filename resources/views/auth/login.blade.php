@@ -53,6 +53,17 @@
 								</div>
 								<button class="btn btn-primary btn-block btn-lg login-btn" type="submit">{{ trans('main.Login') }}</button>
 							</form>
+							
+							<div class="row mt-2">
+								<div class="col-md-4">
+									{{ __('main.Not Have An Account Yet?') }}
+								</div>
+								<div class="col-md-4">
+									<a href="{{ route('register')}}">
+										{{ __('main.Register') }}
+									</a>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('mobile')->unique();
             $table->string('password');
             $table->string('photo')->nullable();
-            $table->text('roles_name');
+            $table->text('roles_name')->nullable();
             $table->boolean('status')->default(1)->nullable();
             $table->rememberToken();
             $table->timestamps();

@@ -23,6 +23,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        // return view('home');
+        if (auth()->user()->roles_name != null) {
+            return redirect()->route('home');
+        } else {
+            return redirect()->route('site.courses');
+        }
     }
 }

@@ -23,6 +23,7 @@ use App\Http\Controllers\Dashboard\CourseItemContentController;
 use App\Http\Controllers\Dashboard\PartenerController;
 use App\Http\Controllers\Dashboard\CompanyInformationController;
 use App\Http\Controllers\Dashboard\MessageController;
+use App\Http\Controllers\Dashboard\SubcriptionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,7 +40,10 @@ use App\Http\Controllers\Dashboard\MessageController;
 //     return view('auth.login');
 // });
 
-Auth::routes(['register' => false]);
+// Auth::routes(['register' => false]);
+Route::Group(['middleware' => ['lang']], function () {
+    Auth::routes();
+});
 Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('lang');
 
 /****************************** Start Admin Routes ******************************/
@@ -209,6 +213,13 @@ Route::Group(['prefix' => 'admin', 'middleware' => ['auth','lang']], function ()
     Route::delete('messageDeleteSelected', [MessageController::class, 'deleteSelected'])->name('message.deleteSelected');
     Route::get('messageShowNotification/{id}/{notification_id}', [MessageController::class, 'showNotification'])->name('message.showNotification');
 
+
+    
+    //subcription
+    Route::get('subcription', [SubcriptionController::class, 'index'])->name('subcription.index');
+    Route::post('subcription/store', [SubcriptionController::class, 'store'])->name('subcription.store');
+    Route::post('subcription/changeStatus/{id}', [SubcriptionController::class, 'changeStatus'])->name('subcription.changeStatus');
+
 });
 /****************************** End Admin Routes ******************************/
 
@@ -222,10 +233,9 @@ Route::Group(['middleware' => ['lang']], function () {
     Route::get('projects', [SiteController::class,'projects'])->name('site.projects');
     Route::get('project-item/{name}', [SiteController::class,'projectItem'])->name('site.projectItem');
     Route::get('courses', [SiteController::class,'courses'])->name('site.courses');
-    Route::get('course-item/{name}', [SiteController::class,'courseItem'])->name('site.courseItem');
-    Route::get('course-item-content/{name}', [SiteController::class,'courseItemContent'])->name('site.courseItemContent');
+    Route::get('course-item/{name}', [SiteController::class,'courseItem'])->name('site.courseItem')->middleware('auth');
+    Route::get('course-item-content/{name}', [SiteController::class,'courseItemContent'])->name('site.courseItemContent')->middleware('auth');
     Route::get('contact-us', [SiteController::class,'contactUs'])->name('site.contactUs');
-    // Route::post('send-message', [SiteController::class, 'sendMessage'])->name('site.send-message');
     Route::post('send-message', [SiteController::class, 'sendMessage'])->name('site.send-message');
 });
 /****************************** End Site Routes ******************************/

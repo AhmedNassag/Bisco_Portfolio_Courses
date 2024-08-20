@@ -2,23 +2,27 @@
 
 return [
     //General
-    'Welcome Back'    => 'Welcome Back',
-    'Login'           => 'Login',
-    'Logout'          => 'Logout',
-    'Email'           => 'Email',
-    'Mobile'          => 'Mobile',
-    'Password'        => 'Password',
-    'Email Or Mobile' => 'Email Or Mobile',
-    'Remember Me'     => 'Remember Me',
-    'Dashboard'       => 'Dashboard',
-    'Home'            => 'Home',
-    'Main'            => 'Main',
-    'Index'           => 'Index',
-    'General'         => 'General',
-    'List'            => 'List',
-    'General Data'    => 'General Data',
-    'View Details'    => 'View Details',
-    'All'             => 'All',
+    'Welcome Back'             => 'Welcome Back',
+    'Register'                 => 'Register',
+    'Login'                    => 'Login',
+    'Logout'                   => 'Logout',
+    'Email'                    => 'Email',
+    'Mobile'                   => 'Mobile',
+    'Password'                 => 'Password',
+    'Confirm Password'         => 'Confirm Password',
+    'Email Or Mobile'          => 'Email Or Mobile',
+    'Remember Me'              => 'Remember Me',
+    'Not Have An Account Yet?' => 'Not Have An Account Yet?',
+    'Already Have An Account?' => 'Already Have An Account?',
+    'Dashboard'                => 'Dashboard',
+    'Home'                     => 'Home',
+    'Main'                     => 'Main',
+    'Index'                    => 'Index',
+    'General'                  => 'General',
+    'List'                     => 'List',
+    'General Data'             => 'General Data',
+    'View Details'             => 'View Details',
+    'All'                      => 'All',
 
     //Main
     'Arabic'                                => 'Arabic',
@@ -176,6 +180,8 @@ return [
     'Who We Are ?'    => 'Who We Are ?',
     'Our Service'     => 'Our Service',
     'Show More'       => 'Show More',
+    'Show'            => 'Show',
+    'Subscribe'       => 'Subscribe',
     'Our Parteners'   => 'Our Parteners',
     'SEND MESSAGE'    => 'SEND MESSAGE',
     'Location'        => 'Location','Success' => 'Success',
@@ -184,6 +190,6 @@ return [
     'ValidationError' => 'There were validation errors.',
     'ServerError'     => 'There was a server error.',
     "Coming Soon"     => 'Coming Soon',
-    "Log In"        => "Log In"
+    "Log In"          => "Log In"
     /****************************** End Site ******************************/
 ];

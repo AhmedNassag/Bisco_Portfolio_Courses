@@ -29,7 +29,7 @@
 						</div>
 						<div class="col-xl-4 d-none d-xl-block">
 							<div class="row">
-								<div class="col-lg-6">
+								<div class="col-lg-4">
 									<!-- lang dropdown -->
 									<div class="dropdown show">
 										@if (App::getLocale() == 'ar')
@@ -56,7 +56,15 @@
 										</div>
 										@endif
 									</div>
-									<!-- // lang dropdown -->
+								</div>
+								<!-- // lang dropdown -->
+								<div class="col-lg-2">
+									@auth
+									<a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i data-feather="log-out" class="mr-1"></i> {{ trans('main.Logout') }}</a>
+									<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+										@csrf
+									</form>
+									@endauth
 								</div>
 
 								<div class="col-lg-6">

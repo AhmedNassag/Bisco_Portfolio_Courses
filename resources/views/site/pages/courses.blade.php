@@ -54,26 +54,62 @@
                                 {{ $courseItem->name }} 
                             </a>
                         </h3>
-                        <span class="margin-right-20px text-extra-small">
-                            <i class="fa fa-user text-grey-2"></i> 
-                            {{ trans('main.By') }} : <a href="#">{{ $courseItem->author }}</a>
-                        </span>
-                        <span class="margin-right-20px text-extra-small">
-                            <i class="fa fa-clock-o text-grey-2"></i> 
-                            {{ trans('main.Hours Count') }} : <a href="#">{{ $courseItem->hours_count }}</a>
-                        </span>
-                        <br>
-                        <span class="margin-right-20px text-extra-small">
-                            <i class="fa fa-star-half-o text-grey-2"></i>
-                            {{ trans('main.Rate') }} :
-                            @for($i = 0; $i < 5; $i++)
-                                @if($i < $courseItem->rate)
-                                    <i class="fa fa-star" aria-hidden="true" style="color: gold"></i>
-                                @else
-                                    <i class="fa fa-star" aria-hidden="true" style="color: darkgray"></i>
-                                @endif
-                            @endfor
-                        </span>
+                        <div class="row">
+                            <div class="col-6">
+                                <span class="margin-right-20px text-extra-small">
+                                    <i class="fa fa-user text-grey-2"></i> 
+                                    {{ trans('main.By') }} : <a href="#">{{ $courseItem->author }}</a>
+                                </span>
+                            </div>
+                            <div class="col-6">
+                                <span class="margin-right-20px text-extra-small">
+                                    <i class="fa fa-clock-o text-grey-2"></i> 
+                                    {{ trans('main.Hours Count') }} : <a href="#">{{ $courseItem->hours_count }}</a>
+                                </span>
+                            </div>
+                            <div class="col-6">
+                                <span class="margin-right-20px text-extra-small">
+                                    <i class="fa fa-star-half-o text-grey-2"></i>
+                                    {{ trans('main.Rate') }} :
+                                    @for($i = 0; $i < 5; $i++)
+                                        @if($i < $courseItem->rate)
+                                            <i class="fa fa-star" aria-hidden="true" style="color: gold"></i>
+                                        @else
+                                            <i class="fa fa-star" aria-hidden="true" style="color: darkgray"></i>
+                                        @endif
+                                    @endfor
+                                </span>
+                            </div>
+                            <div class="col-6">
+                                <span class="margin-right-20px text-extra-small">
+                                    <i class="fa fa-file-video-o text-grey-2"></i> 
+                                    {{ trans('main.Videos Count') }} : <a href="#">{{ $courseItem->course_item_contents->count() }}</a>
+                                </span>
+                            </div>
+                            @auth
+                            <div class="col-4 offset-4">
+                                {{-- @if(auth()) --}}
+                                {{-- <a class="btn btn-primary btn-block btn-sm" href="{{ route('site.courseItem', $courseItem->name) }} ">
+                                    <i class="fa fa-eye text-grey-2"></i>
+                                    {{ trans('main.Show') }}
+                                </a> --}}
+                                {{-- @else --}}
+                                {{-- <a class="btn btn-danger btn-block btn-sm" href="{{ route('site.courseItem', $courseItem->name) }} ">
+                                    <i class="fa fa-bell text-grey-2"></i>
+                                    {{ trans('main.Subscribe') }}
+                                </a> --}}
+                                <a class="btn btn-danger btn-block btn-sm" href="{{ route('subcription.store') }}" onclick="event.preventDefault();document.getElementById('subcription-form').submit();">
+                                    <i class="fa fa-bell text-grey-2"></i>
+                                    {{ trans('main.Subscribe') }}</a>
+									<form id="subcription-form" action="{{ route('subcription.store') }}" method="POST" style="display: none;">
+										@csrf
+                                        <input id="course_item_id" type="hidden" class="form-control floating @error('course_item_id') is-invalid @enderror" name="course_item_id" value="{{ $courseItem->id }}">
+                                        <input id="user_id" type="hidden" class="form-control floating @error('user_id') is-invalid @enderror" name="user_id" value="{{ auth()->user()->id }}">
+									</form>
+                                {{-- @endif --}}
+                            </div>
+                            @endauth
+                        </div>
                     </div>
                     <div class="clearfix"></div>
                 </div>

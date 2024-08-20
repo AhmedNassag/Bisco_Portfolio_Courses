@@ -29,6 +29,19 @@ class LoginController extends Controller
     protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
+     * Override the redirectTo method to redirect users based on their role.
+     *
+     * @return string
+     */
+    protected function redirectTo()
+    {
+        if (auth()->user()->roles_name != null) {
+            return redirect()->route('home');
+        } else {
+            return redirect()->route('site.courses');
+        }
+    }
+    /**
      * Create a new controller instance.
      *
      * @return void

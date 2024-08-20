@@ -48,4 +48,11 @@ class CourseItem extends Model
     {
         return $this->hasMany(CourseItemContent::class, 'course_item_id');
     }
+
+
+
+    public function subcriptions()
+    {
+        return $this->hasMany(Subcription::class, 'course_item_id');
+    }
 }
