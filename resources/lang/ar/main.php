@@ -158,6 +158,15 @@ return [
     'twitter_url'          => 'رابط تويتر',
     'instagram_url'        => 'رابط إنستجرام',
 
+    //Subscription
+    'Subscription'         => 'الإشتراك',
+    'Subscriptions'        => 'الإشتراكات',
+    'Status'               => 'الحالة',
+    'Approved'             => 'تمت الموافقة',
+    'Pending'              => 'قيد الإنتظار',
+    'Deleted Successfully' => 'تم الحذف بنجاح',
+    'An Error Occur'       => 'قد حدث خطأ ما',
+
     //Message
     'Message'  => 'الرسالة',
     'Messages' =>'الرسائل',
@@ -169,24 +178,29 @@ return [
 
 
     /****************************** Start Site ******************************/
-    'Contact Us'      => 'تواصل معنا',
-    'Projects'        => 'مشاريعنا',
-    'About'           => 'عن الشركة',
-    'Get A Call'      => 'اتصل بنا',
-    'Who We Are ?'    => 'من نحن ؟',
-    'Our Service'     => 'خدماتنا',
-    'Show More'       => 'عرض المزيد',
-    'Show'            => 'عرض',
-    'Subscribe'       => 'إشتراك',
-    'Our Parteners'   => 'شركائنا',
-    'SEND MESSAGE'    => 'إرسال رسالة',
-    'Location'        => 'الموقع',
-    'Success'         => 'تم الإرسال',
-    'MessageSent'     => 'لقد تم إرسال رسالتك بنجاح',
-    'Error'           => 'خطأ',
-    'ValidationError' => 'يوجد خطأ في إدخال البيانات',
-    'ServerError'     => 'لقد حدث خطأ. أعد المحاولة مرة أخرى',
-    "Coming Soon"     => 'قريباً'
+    'Contact Us'                                                                              => 'تواصل معنا',
+    'Projects'                                                                                => 'مشاريعنا',
+    'About'                                                                                   => 'عن الشركة',
+    'Get A Call'                                                                              => 'اتصل بنا',
+    'Who We Are ?'                                                                            => 'من نحن ؟',
+    'Our Service'                                                                             => 'خدماتنا',
+    'Show More'                                                                               => 'عرض المزيد',
+    'Show'                                                                                    => 'عرض',
+    'Subscribe'                                                                               => 'إشتراك',
+    'Our Parteners'                                                                           => 'شركائنا',
+    'SEND MESSAGE'                                                                            => 'إرسال رسالة',
+    'Location'                                                                                => 'الموقع',
+    'Success'                                                                                 => 'تم الإرسال',
+    'MessageSent'                                                                             => 'لقد تم إرسال رسالتك بنجاح',
+    'Error'                                                                                   => 'خطأ',
+    'ValidationError'                                                                         => 'يوجد خطأ في إدخال البيانات',
+    'ServerError'                                                                             => 'لقد حدث خطأ. أعد المحاولة مرة أخرى',
+    "Coming Soon"                                                                             => 'قريباً',
+    'Pending Approved'                                                                        => 'في إنتظار الموافقة علي الإشتراك',
+    'You need to subscribe to access this course.'                                            => 'لابد أن تكون مشترك في هذا الكورس لتتمكن من مشاهدة المحتوي الخاص به',
+    'Your request failed to send.'                                                            => 'حدث خطأ في إرسال طلب الإشتراك',
+    'Status of subscribtion changed successfully.'                                            => 'تم تغيير حالة الإشتراك بنجاح',
+    'Your request send successfully, soon after approved you will access to see this course.' => 'تم إرسال طلبك بنجاح برجاء إنتظار الموافقة عليه لتتمكن من مشاهدة الكورس',
+    'Sorry failed in changed subscribtion status.'                                            => 'لقد حدث خطأ أثناء تغيير حالة الإشتراك',
     /****************************** End Site ******************************/
-    
 ];

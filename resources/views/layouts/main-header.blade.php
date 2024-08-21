@@ -6,10 +6,10 @@
 	
 		<!-- Logo -->
 		<div class="header-left">
-			<a href="index" class="logo">
+			<a href="/home" class="logo">
 				<img src="{{ asset('assets_front\assets\img\equipLogo.png') }}" alt="Logo">
 			</a>
-			<a href="index" class="logo logo-small">
+			<a href="/home" class="logo logo-small">
 				<img src="{{ asset('assets_front\assets\img\equipLogo.png') }}" alt="Logo" width="30" height="30">
 			</a>
 			<!-- Sidebar Toggle -->
@@ -98,9 +98,9 @@
 								@endforeach
 							</ul>
 						</div>
-						<div class="topnav-dropdown-footer">
+						{{-- <div class="topnav-dropdown-footer">
 							<a href="{{ route('allNotifications') }}">{{ trans('main.VIEW ALL') }}</a>
-						</div>
+						</div> --}}
 					</div>
 				</li>
 			@endcan

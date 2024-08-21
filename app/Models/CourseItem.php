@@ -51,8 +51,8 @@ class CourseItem extends Model
 
 
 
-    public function subcriptions()
+    public function subscriptions()
     {
-        return $this->hasMany(Subcription::class, 'course_item_id');
+        return $this->hasMany(Subscription::class, 'course_item_id');
     }
 }

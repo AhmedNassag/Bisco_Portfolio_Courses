@@ -76,8 +76,11 @@ class SiteController extends Controller
     public function courseItem($name)
     {
         $courseItem = CourseItem::where('name_ar', $name)->orWhere('name_en', $name)->first();
-        $courseItems = CourseItemContent::where('course_item_id', $courseItem->id)->orderBy('sort','Asc')->get();
-        return view('site.pages.course-item', compact('courseItems'));
+        if($courseItem)
+        {
+            $courseItems = CourseItemContent::where('course_item_id', $courseItem->id)->orderBy('sort','Asc')->get();
+            return view('site.pages.course-item', compact('courseItems'));
+        }
     }
 
 

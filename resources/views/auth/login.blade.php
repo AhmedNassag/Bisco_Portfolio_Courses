@@ -55,7 +55,7 @@
 							</form>
 							
 							<div class="row mt-2">
-								<div class="col-md-4">
+								<div class="col-md-5">
 									{{ __('main.Not Have An Account Yet?') }}
 								</div>
 								<div class="col-md-4">

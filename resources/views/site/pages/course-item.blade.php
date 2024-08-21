@@ -1,5 +1,33 @@
 @extends('site.layouts.master')
 @section('content')
+
+
+
+@if(session('error'))
+    <script>
+        window.onload = function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: "{{ session('error') }}",
+            });
+        };
+    </script>
+@endif
+@if(session('success'))
+    <script>
+        window.onload = function() {
+            Swal.fire({
+                icon: 'success',
+                title: 'Success!',
+                text: "{{ session('success') }}",
+            });
+        };
+    </script>
+@endif
+
+
+
 <!-- Soon pop-up  -->
 <div class="modal contact-modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg">

@@ -25,9 +25,10 @@ class HomeController extends Controller
     {
         // return view('home');
         if (auth()->user()->roles_name != null) {
-            return redirect()->route('home');
+            return view('home');
         } else {
-            return redirect()->route('site.courses');
+            $courseItems = \App\Models\CourseItem::latest()->get();
+            return view('site.pages.courses', compact('courseItems'));
         }
     }
 }

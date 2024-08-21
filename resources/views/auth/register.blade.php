@@ -74,7 +74,7 @@
                                     </div>
                                 </div>
                                 <div class="row mt-2">
-                                    <div class="col-md-4">
+                                    <div class="col-md-5">
                                         {{ __('main.Already Have An Account?') }}
                                     </div>
                                     <div class="col-md-4">

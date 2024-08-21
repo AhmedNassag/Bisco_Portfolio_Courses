@@ -46,6 +46,7 @@
 <script src="{{URL::asset('assets_admin/js/sweet-alert.js')}}"></script>
 <script src="{{URL::asset('assets_admin/plugins/sweet-alert/sweetalert.min.js')}}"></script>
 <script src="{{URL::asset('assets_admin/plugins/sweet-alert/jquery.sweet-alert.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 @yield('js')
 

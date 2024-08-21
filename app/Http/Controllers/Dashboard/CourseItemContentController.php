@@ -153,7 +153,7 @@ class CourseItemContentController extends Controller
                     })
                     ->ignore($request->id),
                 ],
-                'photo'          => 'nullable|file|mimes:mp4,avi,mov,mkv',
+                'photo'          => 'nullable', //|file|mimes:mp4,avi,mov,mkv
             ]);
             if($validator->fails())
             {

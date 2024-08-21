@@ -41,6 +41,7 @@
 
 <!--- Internal Sweet-Alert css-->
 <link href="{{URL::asset('assets_admin/plugins/sweet-alert/sweetalert.css')}}" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
 <!-- Main CSS -->
 @if (App::getLocale() == 'ar')

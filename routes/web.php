@@ -23,7 +23,7 @@ use App\Http\Controllers\Dashboard\CourseItemContentController;
 use App\Http\Controllers\Dashboard\PartenerController;
 use App\Http\Controllers\Dashboard\CompanyInformationController;
 use App\Http\Controllers\Dashboard\MessageController;
-use App\Http\Controllers\Dashboard\SubcriptionController;
+use App\Http\Controllers\Dashboard\SubscriptionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -215,10 +215,11 @@ Route::Group(['prefix' => 'admin', 'middleware' => ['auth','lang']], function ()
 
 
     
-    //subcription
-    Route::get('subcription', [SubcriptionController::class, 'index'])->name('subcription.index');
-    Route::post('subcription/store', [SubcriptionController::class, 'store'])->name('subcription.store');
-    Route::post('subcription/changeStatus/{id}', [SubcriptionController::class, 'changeStatus'])->name('subcription.changeStatus');
+    //subscription
+    Route::get('subscription', [SubscriptionController::class, 'index'])->name('subscription.index');
+    Route::post('subscription/store', [SubscriptionController::class, 'store'])->name('subscription.store');
+    Route::delete('subscription/destroy', [SubscriptionController::class, 'destroy'])->name('subscription.destroy');
+    Route::get('subscription/changeStatus/{id}', [SubscriptionController::class, 'changeStatus'])->name('subscription.changeStatus');
 
 });
 /****************************** End Admin Routes ******************************/
@@ -233,8 +234,8 @@ Route::Group(['middleware' => ['lang']], function () {
     Route::get('projects', [SiteController::class,'projects'])->name('site.projects');
     Route::get('project-item/{name}', [SiteController::class,'projectItem'])->name('site.projectItem');
     Route::get('courses', [SiteController::class,'courses'])->name('site.courses');
-    Route::get('course-item/{name}', [SiteController::class,'courseItem'])->name('site.courseItem')->middleware('auth');
-    Route::get('course-item-content/{name}', [SiteController::class,'courseItemContent'])->name('site.courseItemContent')->middleware('auth');
+    Route::get('course-item/{name}', [SiteController::class,'courseItem'])->name('site.courseItem')->middleware('auth','courseItemCheckSubscription');
+    Route::get('course-item-content/{name}', [SiteController::class,'courseItemContent'])->name('site.courseItemContent')->middleware('auth','courseItemContentCheckSubscription');
     Route::get('contact-us', [SiteController::class,'contactUs'])->name('site.contactUs');
     Route::post('send-message', [SiteController::class, 'sendMessage'])->name('site.send-message');
 });

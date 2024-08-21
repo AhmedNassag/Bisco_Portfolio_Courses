@@ -72,6 +72,14 @@
 
 
 
+				<!-- Subscriptions -->
+				<li class="menu-title"><span>{{ trans('main.Subscriptions') }}</span></li>
+				<li class="{{ Request::is('/admin/subscription') ? 'active' : '' }}">
+					<a href="{{ route('subscription.index') }}"><i data-feather="copy"></i> <span>{{ trans('main.Subscriptions') }}</span></a>
+				</li>
+
+
+
 				<!-- Parteners -->
 				<li class="menu-title"><span>{{ trans('main.Parteners') }}</span></li>
 				<li class="{{ Request::is('admin/partener') ? 'active' : '' }} submenu">

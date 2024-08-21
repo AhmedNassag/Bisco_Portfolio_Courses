@@ -162,6 +162,15 @@ return [
     'twitter_url'          => 'Twitter URL',
     'instagram_url'        => 'Instagram URL',
 
+    //Subscription
+    'Subscription'         => 'Subscription',
+    'Subscriptions'        => 'Subscriptions',
+    'Status'               => 'Status',
+    'Approved'             => 'Approved',
+    'Pending'              => 'Pending',
+    'Deleted Successfully' => 'Deleted Successfully',
+    'An Error Occur'       => 'An Error Occur',
+
     //Message
     'Message'  => 'Message',
     'Messages' =>'Messages',
@@ -173,23 +182,29 @@ return [
 
 
     /****************************** Start Site ******************************/
-    'Contact Us'      => 'Contact Us',
-    'Projects'        => 'Projects',
-    'About'           => 'About',
-    'Get A Call'      => 'Get A Call',
-    'Who We Are ?'    => 'Who We Are ?',
-    'Our Service'     => 'Our Service',
-    'Show More'       => 'Show More',
-    'Show'            => 'Show',
-    'Subscribe'       => 'Subscribe',
-    'Our Parteners'   => 'Our Parteners',
-    'SEND MESSAGE'    => 'SEND MESSAGE',
-    'Location'        => 'Location','Success' => 'Success',
-    'MessageSent'     => 'Your message has been sent successfully.',
-    'Error'           => 'Error',
-    'ValidationError' => 'There were validation errors.',
-    'ServerError'     => 'There was a server error.',
-    "Coming Soon"     => 'Coming Soon',
-    "Log In"          => "Log In"
+    'Contact Us'                                                                              => 'Contact Us',
+    'Projects'                                                                                => 'Projects',
+    'About'                                                                                   => 'About',
+    'Get A Call'                                                                              => 'Get A Call',
+    'Who We Are ?'                                                                            => 'Who We Are ?',
+    'Our Service'                                                                             => 'Our Service',
+    'Show More'                                                                               => 'Show More',
+    'Show'                                                                                    => 'Show',
+    'Subscribe'                                                                               => 'Subscribe',
+    'Our Parteners'                                                                           => 'Our Parteners',
+    'SEND MESSAGE'                                                                            => 'SEND MESSAGE',
+    'Location'                                                                                => 'Location','Success' => 'Success',
+    'MessageSent'                                                                             => 'Your message has been sent successfully.',
+    'Error'                                                                                   => 'Error',
+    'ValidationError'                                                                         => 'There were validation errors.',
+    'ServerError'                                                                             => 'There was a server error.',
+    'Coming Soon'                                                                             => 'Coming Soon',
+    'Log In'                                                                                  => 'Log In',
+    'Pending Approved'                                                                        => 'Pending Approved',
+    'You need to subscribe to access this course.'                                            => 'You Need To Subscribe To Access This Course.',
+    'Your request failed to send.'                                                            => 'Your Request Failed To Send.',
+    'Status of subscribtion changed successfully.'                                            => 'Status Of Subscribtion Changed Successfully.',
+    'Your request send successfully, soon after approved you will access to see this course.' => 'Your Request Send Successfully, Soon After Approved You Will Access To See This Course.',
+    'Sorry failed in changed subscribtion status.'                                            => 'Sorry Failed In Changed Subscribtion Status.',
     /****************************** End Site ******************************/
 ];

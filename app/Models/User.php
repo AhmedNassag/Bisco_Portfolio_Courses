@@ -49,10 +49,24 @@ class User extends Authenticatable
     ];
 
 
+    //check if the user has a subscribe to course
+    public function isSubscribedToCourse($courseId)
+    {
+        return $this->subscriptions()->where('course_item_id', $courseId->id)->where('status', 1)->exists();
+    }
+
+
+
+    public function pendingSubscribedToCourse($courseId)
+    {
+        return $this->subscriptions()->where('course_item_id', $courseId->id)->where('status', 0)->exists();
+    }
+
+
 
     /** start relations **/
-    public function subcriptions()
+    public function subscriptions()
     {
-        return $this->hasMany(Subcription::class, 'user_id');
+        return $this->hasMany(Subscription::class, 'user_id');
     }
 }

@@ -1,5 +1,33 @@
 @extends('site.layouts.master')
 @section('content')
+
+
+
+@if(session('error'))
+    <script>
+        window.onload = function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: "{{ session('error') }}",
+            });
+        };
+    </script>
+@endif
+@if(session('success'))
+    <script>
+        window.onload = function() {
+            Swal.fire({
+                icon: 'success',
+                title: 'Success!',
+                text: "{{ session('success') }}",
+            });
+        };
+    </script>
+@endif
+
+
+
 <div class="modal contact-modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog container mx-auto modal-lg">
         <div class="modal-content margin-top-150px ">
@@ -87,27 +115,32 @@
                                 </span>
                             </div>
                             @auth
-                            <div class="col-4 offset-4">
-                                {{-- @if(auth()) --}}
-                                {{-- <a class="btn btn-primary btn-block btn-sm" href="{{ route('site.courseItem', $courseItem->name) }} ">
-                                    <i class="fa fa-eye text-grey-2"></i>
-                                    {{ trans('main.Show') }}
-                                </a> --}}
-                                {{-- @else --}}
-                                {{-- <a class="btn btn-danger btn-block btn-sm" href="{{ route('site.courseItem', $courseItem->name) }} ">
-                                    <i class="fa fa-bell text-grey-2"></i>
-                                    {{ trans('main.Subscribe') }}
-                                </a> --}}
-                                <a class="btn btn-danger btn-block btn-sm" href="{{ route('subcription.store') }}" onclick="event.preventDefault();document.getElementById('subcription-form').submit();">
-                                    <i class="fa fa-bell text-grey-2"></i>
-                                    {{ trans('main.Subscribe') }}</a>
-									<form id="subcription-form" action="{{ route('subcription.store') }}" method="POST" style="display: none;">
-										@csrf
-                                        <input id="course_item_id" type="hidden" class="form-control floating @error('course_item_id') is-invalid @enderror" name="course_item_id" value="{{ $courseItem->id }}">
-                                        <input id="user_id" type="hidden" class="form-control floating @error('user_id') is-invalid @enderror" name="user_id" value="{{ auth()->user()->id }}">
-									</form>
-                                {{-- @endif --}}
-                            </div>
+                                @if(auth()->user()->isSubscribedToCourse($courseItem))
+                                    <div class="col-4 offset-4">
+                                        <a class="btn btn-primary btn-block btn-sm" href="{{ route('site.courseItem', $courseItem->name) }} ">
+                                            <i class="fa fa-eye text-grey-2"></i>
+                                            {{ trans('main.Show') }}
+                                        </a>
+                                    </div>
+                                @elseif(auth()->user()->pendingSubscribedToCourse($courseItem))
+                                    <div class="col-12">    
+                                        <a class="btn btn-success btn-block btn-sm" href="">
+                                            {{ trans('main.Pending Approved') }}
+                                        </a>
+                                    </div>
+                                @else
+                                    <div class="col-4 offset-4">
+                                        <a class="btn btn-danger btn-block btn-sm" style="color: #fff" onclick="event.preventDefault(); document.getElementById('subscription-form-{{ $courseItem->id }}').submit();">
+                                            <i class="fa fa-bell text-grey-2"></i>
+                                            {{ trans('main.Subscribe') }}
+                                        </a>
+                                        <form id="subscription-form-{{ $courseItem->id }}" action="{{ route('subscription.store') }}" method="POST" style="display: none;">
+                                            @csrf
+                                            <input type="hidden" name="course_item_id" value="{{ $courseItem->id }}">
+                                            <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+                                        </form>
+                                    </div>
+                                @endif
                             @endauth
                         </div>
                     </div>
