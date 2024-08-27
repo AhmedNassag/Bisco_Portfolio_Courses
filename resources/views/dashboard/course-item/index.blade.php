@@ -145,6 +145,8 @@
                                                     <th class="text-center">{{ trans('main.Hours Count') }}</th>
                                                     <th class="text-center">{{ trans('main.Rate') }}</th>
                                                     <th class="text-center">{{ trans('main.Videos Count') }}</th>
+                                                    <th class="text-center">{{ trans('main.Inside Subscriptions Count') }}</th>
+                                                    <th class="text-center">{{ trans('main.Outside Subscriptions Count') }}</th>
                                                     <th class="text-center">{{ trans('main.Photo') }}</th>	
                                                     <th class="text-center">{{ trans('main.Actions') }}</th>
                                                 </tr>
@@ -164,6 +166,8 @@
                                                             <td class="text-center">{{ $item->hours_count }}</td>
                                                             <td class="text-center">{{ $item->rate }}</td>
                                                             <td class="text-center">{{ @$item->course_item_contents->count() }}</td>
+                                                            <td class="text-center">{{ @$item->inside_subscriptions_count }}</td>
+                                                            <td class="text-center">{{ @$item->outside_subscriptions_count }}</td>
                                                             <td class="text-center notPrint">
                                                                 @if($item->photo)
                                                                     <img class="mb-1" src="{{ asset('attachments/course-item/'.$item->photo) }}" alt="{{ $item->photo }}" height="50" width="70">
@@ -231,6 +235,8 @@
                 formData.append('author_en', $('.author_en').val());
                 formData.append('hours_count', $('.hours_count').val());
                 formData.append('rate', $('.rate').val());
+                formData.append('inside_subscriptions_count', $('.inside_subscriptions_count').val());
+                formData.append('outside_subscriptions_count', $('.outside_subscriptions_count').val());
                 formData.append('photo', $('.photo')[0].files[0]);
 
                 $.ajaxSetup({
@@ -289,6 +295,8 @@
                             $('#update_author_en').val(response.data.author_en);
                             $('#update_hours_count').val(response.data.hours_count);
                             $('#update_rate').val(response.data.rate);
+                            $('#update_inside_subscriptions_count').val(response.data.inside_subscriptions_count);
+                            $('#update_outside_subscriptions_count').val(response.data.outside_subscriptions_count);
                             $('#preview_image').attr('src', '/attachments/course-item/' + response.data.photo);
                             $('#preview_image').attr('alt', response.data.photo);
                         }
@@ -313,6 +321,8 @@
                 formData.append('author_en', $('#update_author_en').val());
                 formData.append('hours_count', $('#update_hours_count').val());
                 formData.append('rate', $('#update_rate').val());
+                formData.append('inside_subscriptions_count', $('#update_inside_subscriptions_count').val());
+                formData.append('outside_subscriptions_count', $('#update_outside_subscriptions_count').val());
                 formData.append('photo', $('#update_photo')[0].files[0]);
 
                 $.ajaxSetup({

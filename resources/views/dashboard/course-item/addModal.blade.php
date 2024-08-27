@@ -49,6 +49,18 @@
                         <label>{{ trans('main.Rate') }}</label>
                         <input type="number" class="form-control rate" name="rate" value="{{ old('rate') }}" placeholder="{{ trans('main.Rate') }}" required>
                     </div>
+
+                    <!-- inside_subscriptions_count -->
+                    <div class="form-group">
+                        <label>{{ trans('main.Inside Subscriptions Count') }}</label>
+                        <input type="number" class="form-control inside_subscriptions_count" name="inside_subscriptions_count" value="{{ old('inside_subscriptions_count') }}" placeholder="{{ trans('main.Inside Subscriptions Count') }}" required>
+                    </div>
+
+                    <!-- outside_subscriptions_count -->
+                    <div class="form-group">
+                        <label>{{ trans('main.Outside Subscriptions Count') }}</label>
+                        <input type="number" class="form-control outside_subscriptions_count" name="outside_subscriptions_count" value="{{ old('outside_subscriptions_count') }}" placeholder="{{ trans('main.Outside Subscriptions Count') }}" required>
+                    </div>
                     
                     <!-- photo -->
                     <div class="form-group">

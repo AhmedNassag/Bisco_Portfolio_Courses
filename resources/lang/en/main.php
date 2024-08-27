@@ -139,10 +139,12 @@ return [
     'Subscribed Count' => 'Subcribed Count',
 
     //Course Item Content
-    'Course Item Content'  => 'Item Content',
-    'Course Item Contents' => 'Item Contents',
-    'Sort'                 => 'Sort',
-    'Video'                => 'Video',
+    'Course Item Content'         => 'Item Content',
+    'Course Item Contents'        => 'Item Contents',
+    'Sort'                        => 'Sort',
+    'Video'                       => 'Video',
+    'Inside Subscriptions Count'  => 'Inside Subscriptions Count',
+    'Outside Subscriptions Count' => 'Outside Subscriptions Count',
 
     //Our Parteners
     'Parteners' => 'Parteners',

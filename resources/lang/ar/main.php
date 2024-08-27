@@ -124,15 +124,17 @@ return [
     'Our Courses' => 'محاضراتنا',
 
     //Course Item
-    'Course Item'      => 'الكورس',
-    'Course Items'     => 'الكورسات',
-    'Author'           => 'المحاضر',
-    'Course Title'     => 'عنوان الكورس',
-    'By'               => 'بواسطة',
-    'Hours Count'      => 'عدد الساعات',
-    'Rate'             => 'التقييم',
-    'Videos Count'     => 'عدد الفيديوهات',
-    'Subscribed Count' => 'عدد الإشتراكات',
+    'Course Item'                 => 'الكورس',
+    'Course Items'                => 'الكورسات',
+    'Author'                      => 'المحاضر',
+    'Course Title'                => 'عنوان الكورس',
+    'By'                          => 'بواسطة',
+    'Hours Count'                 => 'عدد الساعات',
+    'Rate'                        => 'التقييم',
+    'Videos Count'                => 'عدد الفيديوهات',
+    'Subscribed Count'            => 'عدد الإشتراكات',
+    'Inside Subscriptions Count'  => 'عدد الإشتراكات من الداخل',
+    'Outside Subscriptions Count' => 'عدد الإشنرااكاات من الخارج',
 
     //Course Item Content
     'Course Item Content'  => 'محتوي الكورس',

@@ -34493,7 +34493,13 @@ form.dark-form ::-ms-input-placeholder {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-
+@media(max-width:767px)
+{
+  .course-carrd
+  {
+    padding-bottom: 35px;
+  }
+}
 @media only screen and (max-width: 991px) {
   .post-standard a.title {
     font-size: 20px;

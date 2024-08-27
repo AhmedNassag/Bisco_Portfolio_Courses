@@ -52,13 +52,15 @@ class CourseItemController extends Controller
     {
         try {
             $validator = Validator::make($request->all(),[
-                'name_ar'     => 'required|string|max:191|unique:course_items,name_ar',
-                'name_en'     => 'required|string|max:191|unique:course_items,name_en',
-                'author_ar'   => 'required|string',
-                'author_en'   => 'required|string',
-                'hours_count' => 'required|numeric|gte:0',
-                'rate'        => 'required|numeric|gte:0|lte:5',
-                'photo'       => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+                'name_ar'                     => 'required|string|max:191|unique:course_items,name_ar',
+                'name_en'                     => 'required|string|max:191|unique:course_items,name_en',
+                'author_ar'                   => 'required|string',
+                'author_en'                   => 'required|string',
+                'hours_count'                 => 'required|numeric|gte:0',
+                'rate'                        => 'required|numeric|gte:0|lte:5',
+                'inside_subscriptions_count'  => 'required|numeric|gte:0',
+                'outside_subscriptions_count' => 'required|numeric|gte:0',
+                'photo'                       => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             ]);
             if($validator->fails())
             {
@@ -74,13 +76,15 @@ class CourseItemController extends Controller
             }
             //insert data
             $courseItem = CourseItem::create([
-                'name_ar'     => $request->name_ar,
-                'name_en'     => $request->name_en,
-                'author_ar'   => $request->author_ar,
-                'author_en'   => $request->author_en,
-                'hours_count' => $request->hours_count,
-                'rate'        => $request->rate,
-                'photo'       => $photo_name,
+                'name_ar'                     => $request->name_ar,
+                'name_en'                     => $request->name_en,
+                'author_ar'                   => $request->author_ar,
+                'author_en'                   => $request->author_en,
+                'hours_count'                 => $request->hours_count,
+                'rate'                        => $request->rate,
+                'inside_subscriptions_count'  => $request->inside_subscriptions_count,
+                'outside_subscriptions_count' => $request->outside_subscriptions_count,
+                'photo'                       => $photo_name,
             ]);
             if (!$courseItem) {
                 session()->flash('error');
@@ -131,13 +135,15 @@ class CourseItemController extends Controller
     {
         try {
             $validator = Validator::make($request->all(),[
-                'name_ar'     => 'required|string|max:191|unique:course_items,name_ar,'.$request->id,
-                'name_en'     => 'required|string|max:191|unique:course_items,name_en,'.$request->id,
-                'author_ar'   => 'required|string',
-                'author_en'   => 'required|string',
-                'hours_count' => 'required|numeric|gte:0',
-                'rate'        => 'required|numeric|gte:0|lte:5',
-                'photo'       => 'nullable',
+                'name_ar'                     => 'required|string|max:191|unique:course_items,name_ar,'.$request->id,
+                'name_en'                     => 'required|string|max:191|unique:course_items,name_en,'.$request->id,
+                'author_ar'                   => 'required|string',
+                'author_en'                   => 'required|string',
+                'hours_count'                 => 'required|numeric|gte:0',
+                'rate'                        => 'required|numeric|gte:0|lte:5',
+                'inside_subscriptions_count'  => 'required|numeric|gte:0',
+                'outside_subscriptions_count' => 'required|numeric|gte:0',
+                'photo'                       => 'nullable',
             ]);
             if($validator->fails())
             {
@@ -162,13 +168,15 @@ class CourseItemController extends Controller
             }
             //update data
             $courseItem->update([
-                'name_ar'     => $request->name_ar,
-                'name_en'     => $request->name_en,
-                'author_ar'   => $request->author_ar,
-                'author_en'   => $request->author_en,
-                'hours_count' => $request->hours_count,
-                'rate'        => $request->rate,
-                'photo'       => $request->hasFile('photo') ? $photo_name : $courseItem->photo,
+                'name_ar'                     => $request->name_ar,
+                'name_en'                     => $request->name_en,
+                'author_ar'                   => $request->author_ar,
+                'author_en'                   => $request->author_en,
+                'hours_count'                 => $request->hours_count,
+                'rate'                        => $request->rate,
+                'inside_subscriptions_count'  => $request->inside_subscriptions_count,
+                'outside_subscriptions_count' => $request->outside_subscriptions_count,
+                'photo'                       => $request->hasFile('photo') ? $photo_name : $courseItem->photo,
             ]);
             session()->flash('success');
             return response()->json([

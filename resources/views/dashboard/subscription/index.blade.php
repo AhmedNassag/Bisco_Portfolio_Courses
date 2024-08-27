@@ -149,6 +149,8 @@
                                                 <tr>
                                                     <th class="text-center">#</th>
                                                     <th class="text-center">{{ trans('main.Name') }}</th>
+                                                    <th class="text-center">{{ trans('main.Mobile') }}</th>	
+                                                    <th class="text-center">{{ trans('main.Email') }}</th>	
                                                     <th class="text-center">{{ trans('main.Course Item') }}</th>
                                                     <th class="text-center">{{ trans('main.Status') }}</th>	
                                                     <th class="text-center">{{ trans('main.Actions') }}</th>
@@ -164,6 +166,8 @@
                                                                 {{ $i }}
                                                             </td>
                                                             <td class="text-center">{{ $item->user->name }}</td>
+                                                            <td class="text-center">{{ $item->user->mobile }}</td>
+                                                            <td class="text-center">{{ $item->user->email }}</td>
                                                             <td class="text-center">{{ $item->course_item->name }}</td>
                                                             <td class="text-center">
                                                                 <a href="{{ route('subscription.changeStatus',@$item->id) }}">
