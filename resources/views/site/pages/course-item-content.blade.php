@@ -77,10 +77,6 @@
                         <video controls width="420" height="420">
                             <source class="mb-1" src="{{ asset('attachments/course-item-content/'.$courseItemContent->photo) }}" alt="{{ $courseItemContent->photo }}">
                         </video>
-                        {{-- <a href="#" class="date">
-                            <span class="day">{{ $courseItemContent->created_at->format('d') }}</span>
-                            <span class="month">{{ $courseItemContent->created_at->format('M') }}</span>
-                        </a> --}}
                     </div>
                     {{-- <a href="#" class="title">
                         {{ $courseItemContent->name }}
