@@ -27,8 +27,8 @@
         }
         td img{
             width: 120px !important;
-            object-fit: covergit ;
-            /* left: 0; */
+            object-fit: cover;
+            
             height: 80px !important;
         }
     </style>
