@@ -18,6 +18,8 @@ class CreateCourseItemContentsTable extends Migration
             $table->string('name_ar')->nullable();
             $table->string('name_en')->nullable();
             $table->string('sort')->nullable();
+            $table->text('thumbnail')->nullable();
+            $table->text('iframe')->nullable();
             $table->string('photo')->nullable();
             $table->foreignId('course_item_id')->nullable()->constrained('course_items')->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();

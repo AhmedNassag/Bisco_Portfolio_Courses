@@ -10,6 +10,27 @@
                 display: none;
             }
         }
+        td div 
+        {
+            width: 120px !important;
+            /* left: 0; */
+            height: 80px !important;
+
+        }
+        td div iframe
+        {
+            width: 120px !important;
+            left: 0;
+            height: 80px !important;
+            object-fit: cover
+
+        }
+        td img{
+            width: 120px !important;
+            object-fit: covergit ;
+            /* left: 0; */
+            height: 80px !important;
+        }
     </style>
     @section('title')
         {{ trans('main.Course Item Contents') }}
@@ -154,7 +175,9 @@
                                                     <th class="text-center">{{ trans('main.Name') }}</th>
                                                     <th class="text-center">{{ trans('main.Course Item') }}</th>
                                                     <th class="text-center">{{ trans('main.Sort') }}</th>
-                                                    <th class="text-center">{{ trans('main.Video') }}</th>
+                                                    <th class="text-center">{{ trans('main.thumbnail') }}</th>
+                                                    <th class="text-center">{{ trans('main.iframe') }}</th>
+                                                    {{-- <th class="text-center">{{ trans('main.Video') }}</th> --}}
                                                     <th class="text-center">{{ trans('main.Actions') }}</th>
                                                 </tr>
                                             </thead>
@@ -171,16 +194,18 @@
                                                             <td class="text-center">{{ $item->name }}</td>
                                                             <td class="text-center">{{ $item->course_item->name }}</td>
                                                             <td class="text-center">{{ $item->sort }}</td>
-                                                            <td class="text-center notPrint">
+                                                            <td class="text-center" ><img style="width: 100%" src="{{ $item->thumbnail }}"   ></td>
+                                                            <td class="text-center" style="white-space:wrap !important;">{!! $item->iframe !!}</td>
+                                                            {{-- <td class="text-center notPrint">
                                                                 @if($item->photo)
                                                                     <div style="position:relative;padding-top:56.25%;width:200px;height:200px">
                                                                         <iframe src="https://iframe.mediadelivery.net/embed/301841/{{ $item->photo }}?autoplay=true&loop=false&muted=false&preload=true&responsive=true" loading="lazy" style="border:0;position:absolute;top:0;height:100%;width:100%;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen="true"></iframe>
                                                                     </div>
                                                                     <br>
-                                                                    {{-- <a class="btn btn-outline-success btn-sm" href="{{ route('show_file',['course-item-content',$item->photo]) }}" role="button" target="_blank"><i class="fas fa-eye"></i></a>
-                                                                    <a class="btn btn-outline-info btn-sm" href="{{ route('download_file',['course-item-content',$item->photo]) }}" role="button" target="_blank"><i class="fas fa-download"></i></a> --}}
+                                                                    <a class="btn btn-outline-success btn-sm" href="{{ route('show_file',['course-item-content',$item->photo]) }}" role="button" target="_blank"><i class="fas fa-eye"></i></a>
+                                                                    <a class="btn btn-outline-info btn-sm" href="{{ route('download_file',['course-item-content',$item->photo]) }}" role="button" target="_blank"><i class="fas fa-download"></i></a>
                                                                 @endif
-                                                            </td>
+                                                            </td> --}}
                                                             <td class="text-center">
                                                                 <button type="button" class="editBtn btn btn-sm btn-secondary mr-1" value="{{ $item->id }}"><i class="far fa-edit"></i></button>
                                                                 <button type="button" class="deleteBtn btn btn-sm btn-danger" value="{{ $item->id }}"><i class="far fa-trash-alt"></i></button>
@@ -238,7 +263,9 @@
                 formData.append('name_en', $('.name_en').val());
                 formData.append('course_item_id', $('.course_item_id').val());
                 formData.append('sort', $('.sort').val());
-                formData.append('photo', $('.photo')[0].files[0]);
+                formData.append('thumbnail', $('.thumbnail').val());
+                formData.append('iframe', $('.iframe').val());
+                // formData.append('photo', $('.photo')[0].files[0]);
 
                 $.ajaxSetup({
                     headers: {
@@ -294,8 +321,10 @@
                             $('#update_name_en').val(response.data.name_en);
                             $('#update_course_item_id').val(response.data.course_item_id);
                             $('#update_sort').val(response.data.sort);
-                            $('#preview_image').attr('src', '/attachments/course-item-content/' + response.data.photo);
-                            $('#preview_image').attr('alt', response.data.photo);
+                            $('#update_thumbnail').val(response.data.thumbnail);
+                            $('#update_iframe').val(response.data.iframe);
+                            // $('#preview_image').attr('src', '/attachments/course-item-content/' + response.data.photo);
+                            // $('#preview_image').attr('alt', response.data.photo);
                         }
                     },
                     error: function (reject) {},
@@ -316,7 +345,9 @@
                 formData.append('name_en', $('#update_name_en').val());
                 formData.append('course_item_id', $('#update_course_item_id').val());
                 formData.append('sort', $('#update_sort').val());
-                formData.append('photo', $('#update_photo')[0].files[0]);
+                formData.append('thumbnail', $('#update_thumbnail').val());
+                formData.append('iframe', $('#update_iframe').val());
+                // formData.append('photo', $('#update_photo')[0].files[0]);
 
                 $.ajaxSetup({
                     headers: {

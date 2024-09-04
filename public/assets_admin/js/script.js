@@ -222,7 +222,7 @@ Version      : 1.0
 		var options = {
 	     	series: [{
 	      name: 'freelance Developers',
-	      color: '#ff5b37',
+	      color: '#0f7997',
 	      data: [31, 40, 28, 51, 42, 109, 100]
 	    }, {
 	      name: 'Developers per project',

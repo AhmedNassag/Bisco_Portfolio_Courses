@@ -556,7 +556,7 @@ button.bg-warning:hover {
 }
 .bg-danger,
 .badge-danger {
-	background-color: #ef3737 !important;
+	background-color: #0f7997 !important;
 }
 a.bg-danger:focus,
 a.bg-danger:hover,
@@ -581,7 +581,7 @@ button.bg-danger:hover {
 }
 .text-danger,
 .dropdown-menu > li > a.text-danger {
-	color: #ef3737 !important;
+	color: #0f7997 !important;
 }
 .text-info,
 .dropdown-menu > li > a.text-info {
@@ -776,8 +776,8 @@ button.bg-danger:hover {
 	background-color: #FF5b33 !important;
 }
 .btn-danger {
-	background-color: #ef3737;
-	border: 1px solid #ef3737;
+	background-color: #0f7997;
+	border: 1px solid #0f7997;
 }
 .btn-danger:hover,
 .btn-danger:focus,
@@ -943,13 +943,13 @@ button.bg-danger:hover {
 	box-shadow: none;
 }
 .btn-outline-danger {
-	color: #ef3737;
-	border-color: #ef3737;
+	color: #0f7997;
+	border-color: #0f7997;
 }
 .btn-outline-danger:hover {
 	color: #fff;
-	background-color: #ef3737;
-	border-color: #ef3737;
+	background-color: #0f7997;
+	border-color: #0f7997;
 }
 .btn-outline-danger:focus,
 .btn-outline-danger.focus {
@@ -958,13 +958,13 @@ button.bg-danger:hover {
 .btn-outline-danger.disabled,
 .btn-outline-danger:disabled {
 	background-color: transparent;
-	color: #ef3737;
+	color: #0f7997;
 }
 .btn-outline-danger:not(:disabled):not(.disabled):active,
 .btn-outline-danger:not(:disabled):not(.disabled).active,
 .show > .btn-outline-danger.dropdown-toggle {
-	background-color: #ef3737;
-	border-color: #ef3737;
+	background-color: #0f7997;
+	border-color: #0f7997;
 }
 .btn-outline-danger:not(:disabled):not(.disabled):active:focus,
 .btn-outline-danger:not(:disabled):not(.disabled).active:focus,
@@ -1642,7 +1642,7 @@ button.bg-danger:hover {
 	background-color: #22cc62;
 }
 .avatar-offline:before {
-	background-color: #ef3737;
+	background-color: #0f7997;
 }
 .avatar-away:before {
 	background-color: #ffbc34;
@@ -3286,12 +3286,12 @@ table.table-inbox tbody tr.checked {
     align-items: center;
     color: #fff;
     background: #0f7997;
-    border: 1px solid #ff431a;
+    border: 1px solid #0f7997;
     border-radius: 5px;
 }
 .filter-btn:hover, .filter-btn:focus {
-    background: #ff431a;
-    border: 1px solid #ff431a;
+    background: #0f7997;
+    border: 1px solid #0f7997;
     color: #fff;
 }
 .filter-card .form-group {
@@ -3830,7 +3830,7 @@ table.table-inbox tbody tr.checked {
 	display: none;
 }
 .user-menu.nav > li > a .badge {
-	background-color: #ef3737;
+	background-color: #0f7997;
     display: block;
     font-size: 8px;
     font-weight: bold;
@@ -4518,8 +4518,8 @@ table.table-inbox tbody tr.checked {
 	border-radius: 4px;
 }
 .settings-btns .btn-orange:hover {
-	background: #ff431a;
-	border: 1px solid #ff431a;
+	background: #0f7997;
+	border: 1px solid #0f7997;
 	color: #fff;
 }
 .settings-btns .btn-grey {

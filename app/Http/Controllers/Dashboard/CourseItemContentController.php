@@ -59,10 +59,12 @@ class CourseItemContentController extends Controller
 
     public function store(Request $request)
     {
-        try {
+        // try {
             $validator = Validator::make($request->all(),[
                 'name_ar'        => 'required|string|max:191|unique:course_item_contents,name_ar',
                 'name_en'        => 'required|string|max:191|unique:course_item_contents,name_en',
+                'thumbnail'      => 'required|unique:course_item_contents,thumbnail',
+                'iframe'         => 'required|unique:course_item_contents,iframe',
                 'course_item_id' => 'required|integer|exists:course_items,id',
                 'sort' => [
                     'required',
@@ -71,7 +73,7 @@ class CourseItemContentController extends Controller
                         return $query->where('course_item_id', $request->course_item_id);
                     }),
                 ],
-                'photo'          => 'required|file|mimes:mp4,avi,mov,mkv',
+                'photo'          => 'nullable|file|mimes:mp4,avi,mov,mkv',
             ]);
             if($validator->fails())
             {
@@ -82,16 +84,18 @@ class CourseItemContentController extends Controller
             }
             // Upload photo
             $photo_name = null;
-            if ($request->hasFile('photo')) {
-                $photo_name = $this->uploadImage($request->file('photo'), 'attachments/course-item-content');
+            // if ($request->hasFile('photo')) {
+            //     $photo_name = $this->uploadImage($request->file('photo'), 'attachments/course-item-content');
                 // $photo_name = $request->photo->store('attachments/course-item-content', 's3');
-            }
+            // }
             //insert data
             $courseItemContent = CourseItemContent::create([
                 'name_ar'        => $request->name_ar,
                 'name_en'        => $request->name_en,
                 'course_item_id' => $request->course_item_id,
                 'sort'           => $request->sort,
+                'thumbnail'      => $request->thumbnail,
+                'iframe'         => $request->iframe,
                 'photo'          => $photo_name,
             ]);
             if (!$courseItemContent) {
@@ -110,9 +114,9 @@ class CourseItemContentController extends Controller
                 'status'   => true,
                 'messages' => 'تم الحفظ بنجاح',
             ]);
-        } catch (\Exception $e) {
-            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
-        }
+        // } catch (\Exception $e) {
+        //     return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        // }
     }
 
 
@@ -145,6 +149,8 @@ class CourseItemContentController extends Controller
             $validator = Validator::make($request->all(),[
                 'name_ar'        => 'required|string|max:191|unique:course_item_contents,name_ar,'.$request->id,
                 'name_en'        => 'required|string|max:191|unique:course_item_contents,name_en,'.$request->id,
+                'thumbnail'      => 'required|unique:course_item_contents,thumbnail,'.$request->id,
+                'iframe'         => 'required|unique:course_item_contents,iframe,'.$request->id,
                 'course_item_id' => 'required|integer|exists:course_items,id',
                 'sort'           => [
                     'required',
@@ -184,6 +190,8 @@ class CourseItemContentController extends Controller
                 'name_en'        => $request->name_en,
                 'course_item_id' => $request->course_item_id,
                 'sort'           => $request->sort,
+                'thumbnail'      => $request->thumbnail,
+                'iframe'         => $request->iframe,
                 'photo'          => $request->hasFile('photo') ? $photo_name : $courseItemContent->photo,
             ]);
             session()->flash('success');

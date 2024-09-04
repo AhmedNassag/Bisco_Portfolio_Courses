@@ -145,6 +145,8 @@ return [
     'Video'                       => 'Video',
     'Inside Subscriptions Count'  => 'Inside Subscriptions Count',
     'Outside Subscriptions Count' => 'Outside Subscriptions Count',
+    'thumbnail'                   => 'Thumbnail',
+    'iframe'                      => 'Iframe',
 
     //Our Parteners
     'Parteners' => 'Parteners',

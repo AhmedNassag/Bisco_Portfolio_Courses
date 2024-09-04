@@ -41,12 +41,24 @@
                         <label>{{ trans('main.Sort') }}</label>
                         <input type="number" class="form-control sort" name="sort" value="{{ old('sort') }}" placeholder="{{ trans('main.Sort') }}" required>
                     </div>
+
+                    <!-- thumbnail -->
+                    <div class="form-group">
+                        <label>{{ trans('main.thumbnail') }}</label>
+                        <input type="text" class="form-control thumbnail" name="thumbnail" value="{{ old('thumbnail') }}" placeholder="{{ trans('main.thumbnail') }}" required>
+                    </div>
+
+                    <!-- iframe -->
+                    <div class="form-group">
+                        <label>{{ trans('main.iframe') }}</label>
+                        <input type="text" class="form-control iframe" name="iframe" value="{{ old('iframe') }}" placeholder="{{ trans('main.iframe') }}" required>
+                    </div>
                     
                     <!-- photo -->
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label>{{ trans('main.Video') }}</label>
                         <input type="file" class="form-control photo" name="photo" value="{{ old('photo') }}" placeholder="{{ trans('main.Photo') }}">
-                    </div>
+                    </div> --}}
 
                     <div class="mt-4">
                         <button id="storeBtn" class="btn btn-primary btn-block">{{ trans('main.Confirm') }}</button>

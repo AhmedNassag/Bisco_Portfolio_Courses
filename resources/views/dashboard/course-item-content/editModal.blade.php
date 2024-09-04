@@ -42,9 +42,21 @@
                         <label>{{ trans('main.Sort') }}</label>
                         <input id="update_sort" type="number" class="form-control sort" name="sort" placeholder="{{ trans('main.Sort') }}" required>
                     </div>
+
+                    <!-- thumbnail -->
+                    <div class="form-group">
+                        <label>{{ trans('main.thumbnail') }}</label>
+                        <input id="update_thumbnail" type="text" class="form-control thumbnail" name="thumbnail" placeholder="{{ trans('main.thumbnail') }}" required>
+                    </div>
+
+                    <!-- iframe -->
+                    <div class="form-group">
+                        <label>{{ trans('main.iframe') }}</label>
+                        <input id="update_iframe" type="text" class="form-control iframe" name="iframe" placeholder="{{ trans('main.iframe') }}" required>
+                    </div>
                     
                     <!-- photo -->
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                     <label>{{ trans('main.Video') }} :</label>
                     <input id="update_photo" class="form-control photo" type="file" name="photo" data-height="70"/>
                     <div class="row">
@@ -53,7 +65,7 @@
                                 <source id="preview_image" class="m-1" src="" alt="">
                             </video>
                         </div>
-                    </div>
+                    </div> --}}
 
                     <!-- id -->
                     <div class="form-group">

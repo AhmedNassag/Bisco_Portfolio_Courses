@@ -73,17 +73,15 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 sm-mb-35px my-lg-5 my-3">
                 <div class="blog-item">
-                    <div class="img">
+                    <div class="img conainer w-75 mx-auto">
                         {{-- <video controls width="420" height="420">
                             <source class="mb-1" src="{{ $courseItemContent->photo }}" alt="{{ $courseItemContent->photo }}">
                         </video> --}}
-                        <div style="position:relative;padding-top:56.25%;width:200px;height:200px">
+                        {{-- <div style="position:relative;padding-top:56.25%;width:200px;height:200px">
                             <iframe src="https://iframe.mediadelivery.net/embed/301841/{{ $courseItemContent->photo }}?autoplay=true&loop=false&muted=false&preload=true&responsive=true" loading="lazy" style="border:0;position:absolute;top:0;height:100%;width:100%;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen="true"></iframe>
-                        </div>
+                        </div> --}}
+                        {!! $courseItemContent->iframe !!}
                     </div>
-                    {{-- <a href="#" class="title">
-                        {{ $courseItemContent->name }}
-                    </a> --}}
                 </div>
             </div>
         </div>
