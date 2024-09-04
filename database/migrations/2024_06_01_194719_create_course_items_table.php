@@ -19,6 +19,10 @@ class CreateCourseItemsTable extends Migration
             $table->string('name_en')->nullable();
             $table->string('author_ar')->nullable();
             $table->string('author_en')->nullable();
+            $table->string('hours_count')->default(0)->nullable();
+            $table->string('rate')->default(0)->nullable();
+            $table->string('inside_subscriptions_count')->default(0)->nullable();
+            $table->string('outside_subscriptions_count')->default(0)->nullable();
             $table->string('photo')->nullable();
             $table->timestamps();
         });

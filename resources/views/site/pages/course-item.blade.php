@@ -76,9 +76,12 @@
                     <div class="blog-item">
                         <div class="blog-item img" >
                             <a class="blog-item img"  href="{{ route('site.courseItemContent', $courseItem->name) }}" target="_blank">
-                                <video style="height:200px; object-fit:cover" class="blog-item img">
-                                    <source class="mb-1 " src="{{ asset('attachments/course-item-content/'.$courseItem->photo) }}" alt="{{ $courseItem->photo }}">
-                                </video>
+                                {{-- <video style="height:200px; object-fit:cover" class="blog-item img">
+                                    <source class="mb-1 " src="{{ $courseItem->photo }}" alt="{{ $courseItem->photo }}">
+                                </video> --}}
+                                <div style="position:relative;padding-top:56.25%;width:200px;height:200px">
+                                    <iframe src="https://iframe.mediadelivery.net/embed/301841/{{ $courseItem->photo }}?autoplay=true&loop=false&muted=false&preload=true&responsive=true" loading="lazy" style="border:0;position:absolute;top:0;height:100%;width:100%;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen="true"></iframe>
+                                </div>
                             </a>
                             {{-- <a href="#" class="date">
                                 <span class="day">{{ $courseItem->created_at->format('d') }}</span>

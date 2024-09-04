@@ -65,7 +65,7 @@
                     }
                 </script>
             @endif
-            
+
 
             <!-- Page Wrapper -->
             <div class="page-wrapper">
@@ -154,7 +154,7 @@
                                                     <th class="text-center">{{ trans('main.Name') }}</th>
                                                     <th class="text-center">{{ trans('main.Course Item') }}</th>
                                                     <th class="text-center">{{ trans('main.Sort') }}</th>
-                                                    <th class="text-center">{{ trans('main.Video') }}</th>	
+                                                    <th class="text-center">{{ trans('main.Video') }}</th>
                                                     <th class="text-center">{{ trans('main.Actions') }}</th>
                                                 </tr>
                                             </thead>
@@ -173,12 +173,12 @@
                                                             <td class="text-center">{{ $item->sort }}</td>
                                                             <td class="text-center notPrint">
                                                                 @if($item->photo)
-                                                                    <video width="200" height="200" controls>
-                                                                        <source  class="mb-1" src="{{ asset('attachments/course-item-content/'.$item->photo) }}" alt="{{ $item->photo }}">
-                                                                    </video>
+                                                                    <div style="position:relative;padding-top:56.25%;width:200px;height:200px">
+                                                                        <iframe src="https://iframe.mediadelivery.net/embed/301841/{{ $item->photo }}?autoplay=true&loop=false&muted=false&preload=true&responsive=true" loading="lazy" style="border:0;position:absolute;top:0;height:100%;width:100%;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen="true"></iframe>
+                                                                    </div>
                                                                     <br>
-                                                                    <a class="btn btn-outline-success btn-sm" href="{{ route('show_file',['course-item-content',$item->photo]) }}" role="button" target="_blank"><i class="fas fa-eye"></i></a>
-                                                                    <a class="btn btn-outline-info btn-sm" href="{{ route('download_file',['course-item-content',$item->photo]) }}" role="button" target="_blank"><i class="fas fa-download"></i></a>
+                                                                    {{-- <a class="btn btn-outline-success btn-sm" href="{{ route('show_file',['course-item-content',$item->photo]) }}" role="button" target="_blank"><i class="fas fa-eye"></i></a>
+                                                                    <a class="btn btn-outline-info btn-sm" href="{{ route('download_file',['course-item-content',$item->photo]) }}" role="button" target="_blank"><i class="fas fa-download"></i></a> --}}
                                                                 @endif
                                                             </td>
                                                             <td class="text-center">
@@ -210,15 +210,15 @@
                             </div>
                         </div>
                         @include('dashboard.course-item-content.addModal')
-                        @include('dashboard.course-item-content.editModal')		
-                    </div>	
+                        @include('dashboard.course-item-content.editModal')
+                    </div>
                 </div>
             </div>
             <!-- /Page Wrapper -->
         </div>
     </div>
     <!-- /Main Wrapper -->
-	
+
 @endsection
 
 
@@ -351,7 +351,7 @@
             });
 
 
-            
+
             //delete
             $(document).on('click', '.deleteBtn', function (e) {
                 e.preventDefault();
@@ -372,7 +372,7 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     }
                 });
-                
+
                 $.ajax({
                     type: "delete",
                     url: "/admin/course-item-content/destroy/" + id,

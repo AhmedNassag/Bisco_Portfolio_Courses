@@ -84,6 +84,7 @@ class CourseItemContentController extends Controller
             $photo_name = null;
             if ($request->hasFile('photo')) {
                 $photo_name = $this->uploadImage($request->file('photo'), 'attachments/course-item-content');
+                // $photo_name = $request->photo->store('attachments/course-item-content', 's3');
             }
             //insert data
             $courseItemContent = CourseItemContent::create([
@@ -175,6 +176,7 @@ class CourseItemContentController extends Controller
             if ($request->hasFile('photo')) {
                 Storage::disk('attachments')->delete('course-item-content/' . $courseItemContent->photo);
                 $photo_name = $this->uploadImage($request->file('photo'), 'attachments/course-item-content');
+                // $photo_name = $request->photo->store('attachments/course-item-content', 's3');
             }
             //update data
             $courseItemContent->update([
@@ -200,7 +202,7 @@ class CourseItemContentController extends Controller
     {
         try {
             // $related_table = RelatedModel::where('who_we_are_side_id', $request->id)->pluck('who_we_are_side_id');
-            // if($related_table->count() == 0) { 
+            // if($related_table->count() == 0) {
                 $courseItemContent = CourseItemContent::findOrFail($request->id);
                 if (!$courseItemContent) {
                     session()->flash('error');
@@ -264,7 +266,7 @@ class CourseItemContentController extends Controller
         $notification->update([
             'read_at' => now(),
         ]);
-        
+
         $data    = CourseItemContent::paginate(10);
         $trashed = false;
         return view('dashboard.course-item-content.index')
