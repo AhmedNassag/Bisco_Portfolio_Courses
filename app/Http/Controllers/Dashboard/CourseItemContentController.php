@@ -59,7 +59,7 @@ class CourseItemContentController extends Controller
 
     public function store(Request $request)
     {
-        // try {
+        try {
             $validator = Validator::make($request->all(),[
                 'name_ar'        => 'required|string|max:191|unique:course_item_contents,name_ar',
                 'name_en'        => 'required|string|max:191|unique:course_item_contents,name_en',
@@ -73,7 +73,7 @@ class CourseItemContentController extends Controller
                         return $query->where('course_item_id', $request->course_item_id);
                     }),
                 ],
-                'photo'          => 'nullable|file|mimes:mp4,avi,mov,mkv',
+                'photo'          => 'nullable|file|mimes:pdf,doc,docx,xls,xlsx'/*|mimes:mp4,avi,mov,mkv*/,
             ]);
             if($validator->fails())
             {
@@ -84,10 +84,10 @@ class CourseItemContentController extends Controller
             }
             // Upload photo
             $photo_name = null;
-            // if ($request->hasFile('photo')) {
-            //     $photo_name = $this->uploadImage($request->file('photo'), 'attachments/course-item-content');
+            if ($request->hasFile('photo')) {
+                $photo_name = $this->uploadImage($request->file('photo'), 'attachments/course-item-content');
                 // $photo_name = $request->photo->store('attachments/course-item-content', 's3');
-            // }
+            }
             //insert data
             $courseItemContent = CourseItemContent::create([
                 'name_ar'        => $request->name_ar,
@@ -114,9 +114,9 @@ class CourseItemContentController extends Controller
                 'status'   => true,
                 'messages' => 'تم الحفظ بنجاح',
             ]);
-        // } catch (\Exception $e) {
-        //     return redirect()->back()->withErrors(['error' => $e->getMessage()]);
-        // }
+        } catch (\Exception $e) {
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
     }
 
 
@@ -160,7 +160,7 @@ class CourseItemContentController extends Controller
                     })
                     ->ignore($request->id),
                 ],
-                'photo'          => 'nullable', //|file|mimes:mp4,avi,mov,mkv
+                'photo'          => 'nullable|file|mimes:pdf,doc,docx,xls,xlsx'/*|mimes:mp4,avi,mov,mkv*/,
             ]);
             if($validator->fails())
             {

@@ -55,10 +55,10 @@
                     </div>
                     
                     <!-- photo -->
-                    {{-- <div class="form-group">
-                        <label>{{ trans('main.Video') }}</label>
+                    <div class="form-group">
+                        <label>{{ trans('main.File') }}</label>
                         <input type="file" class="form-control photo" name="photo" value="{{ old('photo') }}" placeholder="{{ trans('main.Photo') }}">
-                    </div> --}}
+                    </div>
 
                     <div class="mt-4">
                         <button id="storeBtn" class="btn btn-primary btn-block">{{ trans('main.Confirm') }}</button>

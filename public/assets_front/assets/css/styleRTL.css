@@ -4,10 +4,12 @@
   font-family: "Montserrat";
   src: url('../fonts/Montserrat-VariableFont_wght.ttf');
 }
+
 @font-face {
   font-family: "montserrat";
   src: url('../fonts/Montserrat-VariableFont_wght.ttf');
 }
+
 header {
   position: relative;
   z-index: 9;
@@ -38750,33 +38752,33 @@ form.dark-form ::-ms-input-placeholder {
 }
 
 /*!---------------------vendors */
-.logoes h5
-{
+.logoes h5 {
   font-size: 30px;
   color: #1e3b37 !important;
 
 }
-.vendor-carousel p
-{
+
+.vendor-carousel p {
   margin-bottom: 0px;
   text-decoration: none;
   font-size: 14px;
   text-align: center;
   font-weight: bold;
 }
-.vendor-carousel a
-{
+
+.vendor-carousel a {
   margin-bottom: 0px;
   text-decoration: none;
 }
-.rev_slider_wrapper
-{
+
+.rev_slider_wrapper {
   direction: ltr !important;
 }
-#sponsers
-{
+
+#sponsers {
   direction: ltr !important;
 }
+
 /*
 .float-md-left
 {

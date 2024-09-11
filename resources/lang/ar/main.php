@@ -135,14 +135,18 @@ return [
     'Subscribed Count'            => 'عدد الإشتراكات',
     'Inside Subscriptions Count'  => 'عدد الإشتراكات من الداخل',
     'Outside Subscriptions Count' => 'عدد الإشنرااكاات من الخارج',
-    'thumbnail'                   => 'غلاف الفيديو',
-    'iframe'                      => 'الفيديو',
 
     //Course Item Content
     'Course Item Content'  => 'محتوي الكورس',
     'Course Item Contents' => 'محتوي الكورسات',
     'Sort'                 => 'الترتيب',
+    'File'                 => 'الملف',
     'Video'                => 'الفيديو',
+    'thumbnail'            => 'غلاف الفيديو',
+    'iframe'               => 'الفيديو',
+    'Next Video'           => 'الفيديو التالي',
+    'Previous Video'       => 'الفيديو السابق',
+    'Download File'        => 'تحميل الملف',
 
     //Our Parteners
     'Parteners' => 'الشركاء',

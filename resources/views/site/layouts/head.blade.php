@@ -1,14 +1,17 @@
 @if (App::getLocale() == 'ar')
-	<title>Projects-BIOHEALUX</title>
+    <title>Projects-BIOHEALUX</title>
     <meta name="author" content="BIOHEALUX">
     <meta name="robots" content="index follow">
     <meta name="googlebot" content="index follow">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="keywords" content="cargo, clean, contractor, corporate, freight, industry, localization, logistics, modern, shipment, transport, transportation, truck, trucking">
+    <meta name="keywords"
+        content="cargo, clean, contractor, corporate, freight, industry, localization, logistics, modern, shipment, transport, transportation, truck, trucking">
     <meta name="description" content="Transportation and Logistics Responsive HTML5 Template">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- google fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800%7CMontserrat:300i,300,400,500,600,700,400i,500%7CDancing+Script:700%7CDancing+Script:700%7CGreat+Vibes:400%7CMontserrat:400%7CDosis:800%7CRaleway:400,700,800&amp;subset=latin-ext" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800%7CMontserrat:300i,300,400,500,600,700,400i,500%7CDancing+Script:700%7CDancing+Script:700%7CGreat+Vibes:400%7CMontserrat:400%7CDosis:800%7CRaleway:400,700,800&amp;subset=latin-ext"
+        rel="stylesheet">
     <!-- animate -->
     <link rel="stylesheet" href="{{ asset('assets_front/assets/css/animate.css') }}" />
     <link rel="icon" href="{{ asset('assets_front/assets/img/logo.png') }}" type="image/png">
@@ -32,21 +35,42 @@
     <!-- jquery library  -->
     <script src="{{ asset('assets_front/assets/js/jquery-3.2.1.min.js') }}"></script>
     <!-- fontawesome  -->
-	<link rel="stylesheet" href="{{ asset('assets_front/assets/fonts/font-awesome/css/font-awesome.min.css') }}">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
-    
+    <link rel="stylesheet" href="{{ asset('assets_front/assets/fonts/font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <style>
+        .background-main-color:hover {
+            background-color: #2b4b46 !important;
+            cursor: pointer;
+        }
+
+        .background-main-color:active {
+            background-color: #2b4b46 !important;
+            cursor: pointer;
+        }
+         .background-grey-2:hover {
+            background-color: #9E9E9E !important;
+            cursor: not-allowed;
+        }
+
+        .background-grey-2:active {
+            background-color: #9E9E9E !important;
+            cursor: not-allowed;
+        }
+    </style>
 @else
-	
-	<title>Projects-BIOHEALUX</title>
+    <title>Projects-BIOHEALUX</title>
     <meta name="author" content="BIOHEALUX">
     <meta name="robots" content="index follow">
     <meta name="googlebot" content="index follow">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="keywords" content="cargo, clean, contractor, corporate, freight, industry, localization, logistics, modern, shipment, transport, transportation, truck, trucking">
+    <meta name="keywords"
+        content="cargo, clean, contractor, corporate, freight, industry, localization, logistics, modern, shipment, transport, transportation, truck, trucking">
     <meta name="description" content="Transportation and Logistics Responsive HTML5 Template">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- google fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800%7CMontserrat:300i,300,400,500,600,700,400i,500%7CDancing+Script:700%7CDancing+Script:700%7CGreat+Vibes:400%7CMontserrat:400%7CDosis:800%7CRaleway:400,700,800&amp;subset=latin-ext" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800%7CMontserrat:300i,300,400,500,600,700,400i,500%7CDancing+Script:700%7CDancing+Script:700%7CGreat+Vibes:400%7CMontserrat:400%7CDosis:800%7CRaleway:400,700,800&amp;subset=latin-ext"
+        rel="stylesheet">
     <!-- animate -->
     <link rel="stylesheet" href="{{ asset('assets_front/assets/css/animate.css') }}" />
     <link rel="icon" href="{{ asset('assets_front/assets/img/logo.png') }}" type="image/png">
@@ -68,7 +92,27 @@
     <script src="{{ asset('assets_front/assets/js/jquery-3.2.1.min.js') }}"></script>
     <!-- fontawesome  -->
     <link rel="stylesheet" href="{{ asset('assets_front/assets/fonts/font-awesome/css/font-awesome.min.css') }}">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <style>
+        .background-grey-2:hover {
+            background-color: #9E9E9E !important;
+            cursor: not-allowed;
+        }
+
+        .background-grey-2:active {
+            background-color: #9E9E9E !important;
+            cursor: not-allowed;
+        }
+         .background-main-color:hover {
+            background-color: #2b4b46 !important;
+            cursor: pointer;
+        }
+
+        .background-main-color:active {
+            background-color: #2b4b46 !important;
+            cursor: pointer;
+        }
+    </style>
 @endif
 
 
@@ -89,11 +133,13 @@
 <meta name="googlebot" content="index follow">
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="keywords"
-	content="cargo, clean, contractor, corporate, freight, industry, localization, logistics, modern, shipment, transport, transportation, truck, trucking">
+    content="cargo, clean, contractor, corporate, freight, industry, localization, logistics, modern, shipment, transport, transportation, truck, trucking">
 <meta name="description" content="Transportation and Logistics Responsive HTML5 Template">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- google fonts -->
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800%7CMontserrat:300i,300,400,500,600,700,400i,500%7CDancing+Script:700%7CDancing+Script:700%7CGreat+Vibes:400%7CMontserrat:400%7CDosis:800%7CRaleway:400,700,800&amp;subset=latin-ext" rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800%7CMontserrat:300i,300,400,500,600,700,400i,500%7CDancing+Script:700%7CDancing+Script:700%7CGreat+Vibes:400%7CMontserrat:400%7CDosis:800%7CRaleway:400,700,800&amp;subset=latin-ext"
+    rel="stylesheet">
 <!-- animate -->
 <link rel="stylesheet" href="{{ asset('assets_front/assets/css/animate.css') }}" />
 <link rel="icon" href="{{ asset('assets_front/assets/img/logo.png') }}" type="image/png">

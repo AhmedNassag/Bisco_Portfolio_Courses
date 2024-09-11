@@ -56,10 +56,10 @@
                     </div>
                     
                     <!-- photo -->
-                    {{-- <div class="form-group">
-                    <label>{{ trans('main.Video') }} :</label>
+                    <div class="form-group">
+                    <label>{{ trans('main.File') }} :</label>
                     <input id="update_photo" class="form-control photo" type="file" name="photo" data-height="70"/>
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col-12">
                             <video width="200" height="200" controls>
                                 <source id="preview_image" class="m-1" src="" alt="">

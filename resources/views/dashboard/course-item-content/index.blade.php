@@ -177,7 +177,7 @@
                                                     <th class="text-center">{{ trans('main.Sort') }}</th>
                                                     <th class="text-center">{{ trans('main.thumbnail') }}</th>
                                                     <th class="text-center">{{ trans('main.iframe') }}</th>
-                                                    {{-- <th class="text-center">{{ trans('main.Video') }}</th> --}}
+                                                    <th class="text-center">{{ trans('main.File') }}</th>
                                                     <th class="text-center">{{ trans('main.Actions') }}</th>
                                                 </tr>
                                             </thead>
@@ -196,16 +196,17 @@
                                                             <td class="text-center">{{ $item->sort }}</td>
                                                             <td class="text-center" ><img style="width: 100%" src="{{ $item->thumbnail }}"   ></td>
                                                             <td class="text-center" style="white-space:wrap !important;">{!! $item->iframe !!}</td>
-                                                            {{-- <td class="text-center notPrint">
+                                                            <td class="text-center notPrint">
                                                                 @if($item->photo)
-                                                                    <div style="position:relative;padding-top:56.25%;width:200px;height:200px">
+                                                                    {{-- <div style="position:relative;padding-top:56.25%;width:200px;height:200px">
                                                                         <iframe src="https://iframe.mediadelivery.net/embed/301841/{{ $item->photo }}?autoplay=true&loop=false&muted=false&preload=true&responsive=true" loading="lazy" style="border:0;position:absolute;top:0;height:100%;width:100%;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen="true"></iframe>
-                                                                    </div>
+                                                                    </div> --}}
+                                                                    <span>{{ $item->photo }}</span>
                                                                     <br>
                                                                     <a class="btn btn-outline-success btn-sm" href="{{ route('show_file',['course-item-content',$item->photo]) }}" role="button" target="_blank"><i class="fas fa-eye"></i></a>
                                                                     <a class="btn btn-outline-info btn-sm" href="{{ route('download_file',['course-item-content',$item->photo]) }}" role="button" target="_blank"><i class="fas fa-download"></i></a>
                                                                 @endif
-                                                            </td> --}}
+                                                            </td>
                                                             <td class="text-center">
                                                                 <button type="button" class="editBtn btn btn-sm btn-secondary mr-1" value="{{ $item->id }}"><i class="far fa-edit"></i></button>
                                                                 <button type="button" class="deleteBtn btn btn-sm btn-danger" value="{{ $item->id }}"><i class="far fa-trash-alt"></i></button>
@@ -265,7 +266,7 @@
                 formData.append('sort', $('.sort').val());
                 formData.append('thumbnail', $('.thumbnail').val());
                 formData.append('iframe', $('.iframe').val());
-                // formData.append('photo', $('.photo')[0].files[0]);
+                formData.append('photo', $('.photo')[0].files[0]);
 
                 $.ajaxSetup({
                     headers: {
@@ -323,8 +324,8 @@
                             $('#update_sort').val(response.data.sort);
                             $('#update_thumbnail').val(response.data.thumbnail);
                             $('#update_iframe').val(response.data.iframe);
-                            // $('#preview_image').attr('src', '/attachments/course-item-content/' + response.data.photo);
-                            // $('#preview_image').attr('alt', response.data.photo);
+                            $('#preview_image').attr('src', '/attachments/course-item-content/' + response.data.photo);
+                            $('#preview_image').attr('alt', response.data.photo);
                         }
                     },
                     error: function (reject) {},
@@ -347,7 +348,7 @@
                 formData.append('sort', $('#update_sort').val());
                 formData.append('thumbnail', $('#update_thumbnail').val());
                 formData.append('iframe', $('#update_iframe').val());
-                // formData.append('photo', $('#update_photo')[0].files[0]);
+                formData.append('photo', $('#update_photo')[0].files[0]);
 
                 $.ajaxSetup({
                     headers: {
